@@ -6,8 +6,9 @@ from flask_paginate import Pagination
 
 app = Flask(__name__)
 
-# Load dataset
-df = pd.read_csv('data/recipes.csv', usecols=['name', 'ingredients', 'steps', 'description', 'tags'])
+dtype = {'name': str, 'ingredients': str, 'steps': str, 'description': str, 'tags': str}
+df = pd.read_csv('data/recipes.csv', usecols=['name', 'ingredients', 'steps', 'description', 'tags'], dtype=dtype)
+
 
 # Replace missing values
 df['tags'] = df['tags'].fillna('')
