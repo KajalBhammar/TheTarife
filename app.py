@@ -72,7 +72,7 @@ for row in rows:
 def index():
     return render_template('index.html')
 
-@app.route('/w', methods=['POST'])
+@app.route('/', methods=['POST'])
 def generate_recipe():
     search_input = request.form['search-input'].strip().lower()
     keywords = search_input.split()
