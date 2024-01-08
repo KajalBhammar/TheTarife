@@ -91,7 +91,7 @@ def generate_recipe():
     if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
         return jsonify({'recipes': recipes})
     else:
-        return render_template('index.html', recipes=recipes)
+        return render_template('index.html', recipes=recipes, search_input=search_input)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(debug=True)
